@@ -1,0 +1,32 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+  <%if (rowsPerPage<rowNumber) {%>
+    <%if(pageIndex>=rowsPerPage){%>
+       <b> <A href="<%=request.getRequestURI()%>?whichPage=1"><font color=#272727>至第一頁</font></A>&nbsp;</b>
+       <b> <A href="<%=request.getRequestURI()%>?whichPage=<%=whichPage-1%>"><font color=#272727>上一頁 </font></A>&nbsp;
+    <%}%> </b>
+  
+    <%if(pageIndex<pageIndexArray[pageNumber-1]){%>
+       <b> <A href="<%=request.getRequestURI()%>?whichPage=<%=whichPage+1%>"><font color=#272727>下一頁 </font></A>&nbsp; </b>
+       <b> <A href="<%=request.getRequestURI()%>?whichPage=<%=pageNumber%>"><font color=#272727>至最後一頁</font></A>&nbsp; </b>
+    <%}%>
+  <%}%>  
+
+<br><br>
+
+
+  <%if (pageNumber>1) {%>
+  
+    <FORM  METHOD="post" ACTION="<%=request.getRequestURI()%>">   
+       <select size="1" name="whichPage" class="custom-select col-2" id="gender2">
+         <%for (int i=1; i<=pageNumber; i++){%>
+            <option value="<%=i%>">第<%=i%>頁
+         <%}%> 
+       </select>
+       <input class="btn btn-light btn-sm" type="submit" value="確定" >  
+    </FORM>
+    
+  <%}%>
+  
+  
+ 

@@ -1,0 +1,77 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+	<style type="text/css">
+		.pagediv {
+		    text-align: center;
+		}
+		.pageul>li>a.active {
+		    cursor: not-allowed;
+		    background-color: #FF9100!important;
+		    border-color: #FF9100;
+		}
+		.pageul {
+		    padding-left: 0;
+		    margin: 20px 0;
+		    border-radius: 4px;
+		}
+		.pagediv ul {
+		    list-style: none;
+		}
+		.pageul>li>a {
+		    background-color: #2c3e50;
+		    border: 1px solid #2c3e50;
+		    border-radius: 4px;
+		    color: #fff;
+		    float: left;
+		    font-size: 14px;
+		    line-height: 1.42857;
+		    margin-right: 5px;
+		    padding: 5px 10px;
+		    position: relative;
+		    text-decoration: none;
+		}
+	</style>
+	
+	<div class="pagediv">
+		<ul class="pageul">
+			<%if (rowsPerPage<rowNumber) {%>
+				<%if(pageIndex>=rowsPerPage){%>
+					<li>
+			    	    <a href="<%=request.getRequestURI()%>?whichPage=<%=whichPage-1%>">&laquo;</a>
+					</li>
+					<li>
+						<a href="<%=request.getRequestURI()%>?whichPage=1">1</a>
+					</li>
+				<%}%>
+
+			  	<%if (3 <= whichPage) {%>  
+					<%for (int i=2; i<=(whichPage-1); i++){%>
+						<li>
+							<a href="<%=request.getRequestURI()%>?whichPage=<%=i%>"><%=i%></a>
+						</li>
+					<%}%>
+				<%}%>
+				
+				<li>
+					<a class="active"><%=whichPage%></a>
+				</li>
+				
+				<%if (pageNumber > whichPage) {%>  
+					<%for (int i= (whichPage+1); i<=(pageNumber-1); i++){%>
+						<li>
+							<a href="<%=request.getRequestURI()%>?whichPage=<%=i%>"><%=i%></a>
+						</li>
+					<%}%>
+				<%}%>
+
+				<%if(pageIndex<pageIndexArray[pageNumber-1]){%>
+					<li>
+						<a href="<%=request.getRequestURI()%>?whichPage=<%=pageNumber%>"><%=pageNumber%></a>
+					</li>
+					<li>
+						<a href="<%=request.getRequestURI()%>?whichPage=<%=whichPage+1%>">&raquo;</a>
+					</li>
+				<%}%>
+			<%}%>  
+		</ul>
+	</div>

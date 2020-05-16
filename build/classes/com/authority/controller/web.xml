@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>DA106G6</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/Team6DB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	
+	<servlet>
+		<servlet-name>AllStatus</servlet-name>
+		<servlet-class>com.util.AllStatus</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AllStatus</servlet-name>
+		<url-pattern>/AllStatus</url-pattern>
+	</servlet-mapping>
+
+
+	
+
+	
+	<servlet>
+		<servlet-name>MemberServlet</servlet-name>
+		<servlet-class>com.member.controller.MemberServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MemberServlet</servlet-name>
+		<url-pattern>/member/member.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>MemberServlet</servlet-name>
+		<url-pattern>/back-end/member/member.do</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>MemberServlet</servlet-name>
+		<url-pattern>/front-end/member/member.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MemeberId_cardReader</servlet-name>
+		<servlet-class>com.member.controller.MemeberId_cardReader</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MemeberId_cardReader</servlet-name>
+		<url-pattern>/MemeberId_cardReader</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>NotificationServlet</servlet-name>
+		<servlet-class>com.notification.controller.NotificationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NotificationServlet</servlet-name>
+		<url-pattern>/notification/notification.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ComplaintServlet</servlet-name>
+		<servlet-class>com.complaint.controller.ComplaintServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ComplaintServlet</servlet-name>
+		<url-pattern>/complaint/complaint.do</url-pattern>
+	</servlet-mapping>	
+
+
+		
+	<servlet>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<servlet-class>com.employee.controller.EmployeeServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<url-pattern>/employee/employee.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FunctionServlet</servlet-name>
+		<servlet-class>com.function.controller.FunctionServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>FunctionServlet</servlet-name>
+		<url-pattern>/function/function.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AuthorityServlet</servlet-name>
+		<servlet-class>com.authority.controller.AuthorityServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AuthorityServlet</servlet-name>
+		<url-pattern>/authority/authority.do</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

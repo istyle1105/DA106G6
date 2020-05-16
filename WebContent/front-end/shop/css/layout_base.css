@@ -1,0 +1,161 @@
+@charset "utf-8";
+/* CSS Document */
+/* CSS 載入順序:
+	Layout Base
+		基本版型, 含距離, 不含色彩/背景圖
+	Style Base (color / image)
+		版型色彩/背景圖
+		文字及內容樣式
+	Type.css
+		設計師樣式
+ */
+/*------------------------- reset css -------------------------*/
+/* reset css : 將相關設定還原為最基本模式, 在需要時個別設定 */
+*{
+	margin:0;
+	padding:0;
+	border: 0;
+	vertical-align: baseline;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+:focus {
+	outline: 0;
+}
+/*基本的HTML元素樣式設定*/
+body {
+	margin: 0px;
+	padding: 0px;
+	color:#333;
+	background:#FFF none repeat-x center top;
+}
+.clearall{
+	clear:both;
+}
+a.active{
+	color:#A00;
+}
+/*------------------------- 主要DIV設定 -------------------------*/
+/*
+	.container	: 整頁的範圍
+	.header_bg	: header背景圖容器, 可延伸至整頁
+	.main_bg	: main	背景圖容器, 可延伸至整頁
+	.footer_bg	: footer背景圖容器, 可延伸至整頁
+
+	.header	: header實際內容的容器
+	.main	: main	實際內容的容器
+	.footer	: footer實際內容的容器
+
+	.main .side1 : 側欄1
+	.main .side2 : 側欄2
+	.main .content : 主要內文
+*/
+.container, .main_bg,{
+	background: no-repeat center top; /*背景預設:不重複, 靠齊:上中*/
+	position:relative;
+	width:100%; /*全頁寬*/
+	float:left; /*預防內容margin突出*/
+}
+
+.main,{
+	background: no-repeat center top;
+	position:relative; /* "以我為準" : 作為其內容做絕對定位的基準範圍 */
+	width:1350px; /* 統一的內容寬度 */
+	margin:0 auto; /* 水平置中 */
+}
+
+.main{
+}
+
+/*
+	主要內(side1, content, side2)容設定要點:
+	* side1+content+side2總寬等於main的寬度
+	* float:left 由左向右排
+	* float:right 由右向左排
+	* content設: 最小高度min-height
+	* IE6不支援min-height , 只能用height
+*/
+.side1{
+	float:left;
+	width:200px;
+	min-height:500px;
+	position:relative;
+}
+.side2{
+	float:right;
+	width:200px;
+	min-height:500px;
+	position:relative;
+}
+.content{
+	position:relative;
+	float:left;
+	margin-right:0px;
+	width:600px;
+	/*min-height:100px;*/
+	/*IE6: height:385px*/
+}
+
+/*------------------------- 選單【共同】設定 -------------------------*/
+ul.nav_h { /*ul.nav_h 橫式選單*/
+	list-style-type: none; /*去除項目清單圓點*/
+	margin: 0px;
+	padding: 0px;
+}
+ul.nav_h li {
+	display: inline; /*使項目內容橫向排列, 直式選單不用設*/
+	float:left;
+}
+ul.nav_h li a {
+	background-repeat:no-repeat;
+	display: block;
+	float: left;  /*使項目內容橫向排列, 直式選單不用設*/
+}
+
+ul.nav { /*ul.nav 直式選單*/
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+ul.nav li {
+	display: block;
+}
+ul.nav li a {
+	background-repeat:no-repeat;
+	display: block;
+}
+/*------------------------- (PageType:Home)首頁專屬設定 -------------------------*/
+body.home{
+}
+/*------------------------- 內文內容設定 -------------------------*/
+
+#floating{ /*垂直捲動區塊, 配合javascript , 原則上放在.content內*/
+	display:block; /*不使用浮動區塊*/
+	width:36px;
+	height:38px;
+	position:absolute;
+	top:0;
+	left:980px;
+	z-index:9999;
+}
+/*------------------------- 瀏覽器相容設定: IE6 -------------------------*/
+body.ie6 #floating{
+}
+body.ie6{
+	/*background:none;*/
+}
+body.ie6 .main{
+}
+body.ie6 .content{
+	/*margin-right:0px;*/
+	height:1000px;
+}
+body.ie6 ul.nav_h li{
+	float:left;
+}
+.ui-state-default {
+	
+}
+

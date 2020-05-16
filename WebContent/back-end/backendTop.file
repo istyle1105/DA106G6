@@ -1,0 +1,158 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+<style>
+body{
+background:
+	-webkit-linear-gradient(top,rgba(255,255,255,1),
+	rgba(255,255,255,0.35)),url('<%=request.getContextPath()%>/back-end/img/paperplaneBg.jpg') ;
+	background-repeat: no-repeat; 
+        background-size: cover; 
+        background-attachment: fixed;  
+        background-position: center; 
+	
+	    }
+
+</style>
+		
+
+<div class="leftside">
+	<div class="page-wrapper chiller-theme toggled">
+		<nav class="sidebar-wrapper">
+			<div>
+				<div class="sidebar-header">
+					<div class="user-info" onclick="location.href='<%=request.getContextPath()%>/back-end/index.jsp';">
+						<span class="user-name">
+							<h3><strong>Let's Go Trip</strong></h3>
+							<h3><strong>後台管理</strong></h3>
+						</span>
+						<%--<span class="user-role">這裡填入網站介紹</span>--%>
+					</div>
+				</div>
+				<div class="sidebar-menu">
+					<ul>
+						<li class="header-menu">
+							<span>${employeeVO.emp_name}</span>
+						</li>
+						<li>
+							<img style="margin:15px 70px;"height="125" onerror="javascript:this.src='<%=request.getContextPath()%>/NoData/no_photo.jpg'" src="data:image/png;base64,${employeeVO.emp_photo}">
+						</li>
+<%if(listtmp.contains("EF0002")){%>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="fa fa-before"></i><span>會員管理</span>
+							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/member/listAllMember.jsp">會員帳號管理</a>
+									</li>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/complaint/listAllComp.jsp">會員申訴管理</a>
+								</li>
+								<li>
+										<a href="<%=request.getContextPath()%>/back-end/wallet/listAllWallet.jsp">電子錢包總覽</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+<%} %>
+
+<%if(listtmp.contains("EF0003")){%>	
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="fa fa-before"></i><span>代購管理</span>
+							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/demand/listAllDemand.jsp">代購管理</a>
+									</li>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/p_report/listAllP_Report.jsp"">代購檢舉管理</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+<%} %>
+<%if(listtmp.contains("EF0005")){%>	
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="fa fa-before"></i><span>商城管理</span>
+							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/product/listAllProduct.jsp">商品總覽</a>
+									</li>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/order_master/listAllOrder_master.jsp">訂單主檔總覽</a>
+									</li>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/order_detail/listAllOrder_detail.jsp">訂單明細總覽</a>
+									</li>
+									
+								</ul>
+							</div>
+						</li>
+<%} %>
+<%if(listtmp.contains("EF0004")){%>	
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="fa fa-before"></i><span>日誌管理</span>
+							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/log/newback.jsp">日誌檢舉管理</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+<%} %>
+<%if(listtmp.contains("EF0001")){%>	
+						<li class="header-menu">
+							<span>內部</span>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="fa fa-emp"></i><span>員工管理</span>
+								<span class="badge badge-pill badge-primary">1</span>
+							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/employee/listAllEmployee.jsp">員工權限管理</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+<%} %>
+						<li class="header-menu">
+							<span>個人</span>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<span>帳號管理</span>
+							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li>
+										<a href="<%=request.getContextPath()%>/back-end/employee/listOneEmployee.jsp">我的資料</a>
+									</li>
+									<li>
+										<a href="<%=request.getContextPath()%>/employee/employee.do?action=logout"">登出</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+</div>
+
+<div class="rightside">
+	<div class="backendContent" style="margin-left:10px;">
+
+	

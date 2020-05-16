@@ -1,0 +1,225 @@
+@charset "utf-8";
+/* CSS Document */
+/*頂層項目*/
+body {
+    background-color: #fff;
+    color: #555555;
+    font-family: "微軟正黑體";
+    font-size: 14px;
+}
+
+
+.side1 {
+    background: none repeat scroll 0 0 transparent;
+    float: left;
+    width: 212px;
+}
+
+.side1 ul#sublink {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+    .side1 ul#sublink li {
+        margin-bottom: 20px;
+    }
+
+.side1 .catalog .event ul#sublink li {
+    margin-bottom: 0;
+}
+
+.side1 ul#sublink li li {
+    margin-bottom: 0;
+}
+
+.side1 ul#sublink li a {
+    font-size: 15px;
+    color: #000;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #017dc3;
+    background-repeat: no-repeat;
+    padding-left: 33px;
+    line-height: 1.4em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .side1 ul#sublink li a span {
+        font-size: 12px;
+    }
+
+    .side1 ul#sublink li a:hover {
+        color: #000;
+    }
+
+.side1 .catalog .event ul#sublink li li a.bottom {
+    border-bottom: 0 none;
+}
+
+.side1 .catalog .event ul#sublink li li a {
+    background-position: 180px 9px;
+    background-image: url(../images/son/side_icon_red.png);
+}
+
+.side1 ul#sublink li li a {
+    color: #555555;
+    padding: 6px 10px 6px 0;
+    line-height: 1.5em;
+    background-image: url(../images/son/side_icon_blue.png);
+    background-position: 195px 9px;
+    background-repeat: no-repeat;
+    border-bottom: 1px dotted #bcbcbc;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.side1 h1 {
+    font-size: 23px;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+    .side1 h1 span {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+.side1 .subnav ul#sublink2 {
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+    .side1 .subnav ul#sublink2 li {
+    }
+
+        .side1 .subnav ul#sublink2 li a {
+            background-image: url("../images/son/side_icon_blue.png");
+            background-position: 180px 9px;
+            background-repeat: no-repeat;
+            border-bottom: 1px dotted #bcbcbc;
+            color: #555555;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.5em;
+            padding: 6px 10px 6px 0;
+            text-decoration: none;
+        }
+
+            .side1 .subnav ul#sublink2 li a.bottom {
+                border: 0 none;
+            }
+
+            .side1 .subnav ul#sublink2 li a:hover {
+                color: #000;
+            }
+
+        .side1 .subnav ul#sublink2 li li a {
+            padding-left: 32px;
+            background-image: url(../images/son/side_icon_arrow.png);
+            background-repeat: no-repeat;
+            background-position: 16px 14px;
+        }
+
+    .side1 .price h2 {
+        color: #fff;
+        background-image: url(../images/son/side_title_bg.jpg);
+        background-repeat: repeat;
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+
+.side1 .area {
+    background-color: #ededed;
+    padding: 10px;
+}
+
+    .side1 .area select {
+        background-color: #fff;
+        border: 0 none;
+        font-family: "微軟正黑體";
+        font-size: 12px;
+        width: 190px;
+        padding: 3px;
+        color: #9a9a9a;
+    }
+
+.side1 .price h2 img {
+    margin: 0 5px 0 0;
+}
+
+/*------------------------- 次級項目 ------------------------*/
+
+body.merchant .main div.breadcrumb,
+body.sitemap .main div.breadcrumb,
+body.page .main div.breadcrumb,
+body.service .main div.breadcrumb,
+body.news .main div.breadcrumb,
+body.products .main div.breadcrumb {
+    top: 0;
+}
+
+.main div.breadcrumb {
+    position: absolute;
+    top: 220px;
+    left: -5px;
+    z-index: 90;
+}
+
+    .main div.breadcrumb ul {
+        list-style-type: none;
+        width: auto;
+    }
+
+        .main div.breadcrumb ul li {
+            float: left;
+            margin: 0 4px;
+            padding: 0 10px 0 0;
+            background-image: url(../images/son/icon.jpg);
+            background-repeat: no-repeat;
+            background-position: right 4px;
+            font-size: 12px;
+        }
+
+            .main div.breadcrumb ul li.current {
+                background-image: none;
+                color: #000;
+            }
+
+            .main div.breadcrumb ul li a {
+                color: #797979;
+                text-decoration: none;
+                display: block;
+            }
+
+                .main div.breadcrumb ul li a:hover {
+                    color: #000;
+                }
+
+                .main div.breadcrumb ul li a.home {
+                    background-image: url(../images/son/home.png);
+                    background-repeat: no-repeat;
+                    background-position: left 4px;
+                    padding-left: 17px;
+                }
+
+				ul.nav { /*ul.nav 直式選單*/
+					list-style-type: none;
+					margin: 0px;
+					padding: 0px;
+				}
+				ul.nav li {
+					display: block;
+				}
+				ul.nav li a {
+					background-repeat:no-repeat;
+					display: block;
+				}
+				.side1{
+					float:left;
+					width:200px;
+					min-height:500px;
+					position:relative;
+				}
+
